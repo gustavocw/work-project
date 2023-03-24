@@ -4,11 +4,8 @@ import { redirect } from "next/navigation"
 import MyPosts from "./MyPosts"
 import Profile from "./editProfile/profile"
 
-type User = {
-  image: any;
-}
 
-export default async function Dashboard({ image }: User) {
+export default async function Dashboard() {
   const session = await unstable_getServerSession(authOptions)
   if (!session) {
     redirect("/api/auth/signin")
