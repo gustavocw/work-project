@@ -2,11 +2,10 @@ import { unstable_getServerSession } from "next-auth/next"
 import { authOptions } from "../../pages/api/auth/[...nextauth]"
 import { redirect } from "next/navigation"
 import MyPosts from "./MyPosts"
-import Image from "next/image"
 import Profile from "./editProfile/profile"
 
 type User = {
-  image: string;
+  image: any;
 }
 
 export default async function Dashboard({ image }: User) {
